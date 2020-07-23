@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+
+        <title>
+            {% if title %}
+                {{title}} | Admin EWS Pamali Juana
+            {% else %}
+                Admin EWS Pamali Juana
+            {% endif %}
+        </title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/pupr.ico') }}"/>
+
+        <!-- Google Font: Source Sans Pro -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fontawesome-free/css/all.min.css') }}">
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- Theme style -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/adminlte.min.css') }}">
+
+        {% block css %}{% endblock %}
+    </head>
+
+    <body class="hold-transition layout-top-nav">
+
+        <!-- Page Wrapper -->
+        <div class="wrapper">
+
+            {% include 'master/navbar_public.html' %}
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+              <section class="content">
+                <div class="container-fluid">
+                    <!-- NoScript section -->
+                    <noscript>
+                        <div class="alert alert-danger text-center" role="alert">
+                            <p>
+                                Peringatan : Setting JavaScript di Alat anda tidak aktif.
+                                <br>
+                                Hal tersebut akan mengganggu beberapa fungsi di web ini.
+                                <br>
+                                Dimohon segera mengaktifkan setting JavaScript.
+                                <br>
+                                Terima Kasih.
+                            </p>
+                        </div>
+                    </noscript>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                              {{ message }}
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
+
+                    {% block content %}{% endblock %}
+                </div><!-- /.container-fluid -->
+              </section>
+            </div>
+            <!-- /.content -->
+
+            <!-- Custom Confirm Using Modal -->
+            <div id="confirm" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-sm border-danger" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">UPB Bengawan Solo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="message">Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="yes" type="button" class="btn btn-primary">Ya</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Alert Using Modal -->
+            <div id="alert" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">UPB Bengawan Solo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="message">Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="yes" type="button" class="btn btn-primary">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- jQuery -->
+        <script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="{{ url_for('static', filename='plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+          $.widget.bridge('uibutton', $.ui.button)
+        </script>
+        <!-- Bootstrap 4 -->
+        <script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- AdminLTE App -->
+        <script src="{{ url_for('static', filename='js/adminlte.js') }}"></script>
+        <script>
+        function customConfirm(message, yesCallback) {
+            let confirmBox = $("#confirm");
+            confirmBox.find(".message").text(message);
+            confirmBox.find("#yes").click(function(){
+                confirmBox.modal("toggle");
+                yesCallback();
+            });
+            confirmBox.modal("toggle");
+        }
+
+        function customAlert(message, yesCallback) {
+            let confirmBox = $("#alert");
+            confirmBox.find(".message").text(message);
+            confirmBox.find("#yes").click(function(){
+                confirmBox.modal("toggle");
+                yesCallback();
+            });
+            confirmBox.modal("toggle");
+        }
+        </script>
+        {% block js %}{% endblock %}
+    </body>
+
+</html>
