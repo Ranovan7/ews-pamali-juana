@@ -15,4 +15,13 @@ from ews_app.admin import bp
 @roles_filter(roles=['admin', 'pejabat'])
 def bendungan_index():
     ''' Index Bendungan '''
-    return render_template('admin/bendungan/teknis.html')
+    return render_template('admin/bendungan/index.html')
+
+
+@bp.route('/bendungan/<bendungan_id>')
+@login_required
+@roles_filter(roles=['admin', 'pejabat'])
+def bendungan_info(bendungan_id):
+    ''' Index Bendungan '''
+    return render_template('admin/bendungan/info.html',
+                            bendungan_id=bendungan_id)

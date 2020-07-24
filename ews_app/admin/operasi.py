@@ -10,7 +10,7 @@ from ews_app import db, roles_filter, petugas_check
 from ews_app.admin import bp
 
 
-@bp.route('/bendungan/operasi')
+@bp.route('/operasi')
 @login_required
 @roles_filter(roles=['admin', 'pejabat'])
 def operasi():

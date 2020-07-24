@@ -46,6 +46,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
+            {% if current_user.role_name in ['admin', 'pejabat'] %}
              <li class="nav-item">
                <a href="{{ url_for('admin.dashboard') }}" class="nav-link {% if title == 'dashboard' %}active{% endif %}">
                  <i class="nav-icon fas fa-th"></i>
@@ -54,6 +55,18 @@
                  </p>
                </a>
              </li>
+             <li class="nav-item">
+               <a href="{{ url_for('admin.alert') }}" class="nav-link {% if title == 'peringatan' %}active{% endif %}">
+                 <i class="nav-icon fas fa-bell"></i>
+                 <p>
+                   Peringatan
+                   <span class="badge badge-warning right">6</span>
+                 </p>
+               </a>
+             </li>
+            {% endif %}
+
+            {% if current_user.role_name in ['admin', 'pejabat'] %}
             <li class="nav-item {% if title == 'bendungan' %}menu-open{% endif %}">
               <a href="#" class="nav-link {% if title == 'bendungan' %}active{% endif %}">
                 <i class="nav-icon fas fa-water"></i>
@@ -71,6 +84,9 @@
                 </li>
               </ul>
             </li>
+            {% endif %}
+
+            {% if current_user.role_name in ['admin', 'pejabat'] %}
             <li class="nav-item {% if title == 'operasi' %}menu-open{% endif %}">
               <a href="#" class="nav-link {% if title == 'operasi' %}active{% endif %}">
                 <i class="nav-icon fas fa-ruler-combined"></i>
@@ -88,8 +104,39 @@
                 </li>
               </ul>
             </li>
+            {% endif %}
+
+            {% if current_user.role_name in ['admin'] %}
             <li class="nav-item">
-              <a href="{{ url_for('admin.alert') }}" class="nav-link {% if title == 'peringatan' %}active{% endif %}">
+              <a href="{{ url_for('admin.users') }}" class="nav-link {% if title == 'users' %}active{% endif %}">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  Users
+                </p>
+              </a>
+            </li>
+            {% endif %}
+
+            {% if current_user.role_name in ['petugas'] %}
+            <li class="nav-item menu-open">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-water"></i>
+                <p>
+                  {{ current_user.bendungan.name }}
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ url_for('admin.operasi_bendungan', bendungan_id=current_user.bendungan_id) }}" class="nav-link {% if title == 'operasi' %}active{% endif %}">
+                    <i class="fas fa-ruler-combined fa-xs mr-2 ml-2"></i>
+                    <p>Operasi</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('admin.users') }}" class="nav-link {% if title == 'peringatan' %}active{% endif %}">
                 <i class="nav-icon fas fa-bell"></i>
                 <p>
                   Peringatan
@@ -97,7 +144,8 @@
                 </p>
               </a>
             </li>
-            <li class="nav-header">PROFIL</li>
+            {% endif %}
+            <!-- <li class="nav-header">PROFIL</li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-sitemap"></i>
@@ -113,7 +161,7 @@
                   Kontak
                 </p>
               </a>
-            </li>
+            </li> -->
         </nav>
         <!-- /.sidebar-menu -->
       </div>

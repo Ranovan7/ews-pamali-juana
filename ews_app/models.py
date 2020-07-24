@@ -51,6 +51,7 @@ class Users(UserMixin, db.Model):
     username = db.Column(db.String(30), index=True, unique=True, nullable=False)
     password = db.Column(db.String(128))
     role = db.Column(db.String(1))
+    is_active = db.Column(db.Boolean, default=True)
     bendungan_id = db.Column(db.Integer, db.ForeignKey('bendungan.id'), nullable=True)
 
     alert_logs = relationship('AlertLog', backref='user')

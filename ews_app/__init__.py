@@ -5,6 +5,7 @@ from flask import Flask, redirect, url_for, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_socketio import SocketIO
 from flask_login import LoginManager, current_user
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -12,6 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 socketio = SocketIO(app)
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 
