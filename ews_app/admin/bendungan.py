@@ -6,13 +6,13 @@ from psycopg2 import IntegrityError
 import datetime
 import calendar
 
-from ews_app import roles_filter
+from ews_app import db, roles_filter, petugas_check
 from ews_app.admin import bp
 
 
-@bp.route('/alert')
+@bp.route('/bendungan')
 @login_required
 @roles_filter(roles=['admin', 'pejabat'])
-def alert():
-    ''' Index alert '''
-    return render_template('admin/alert/index.html')
+def bendungan_index():
+    ''' Index Bendungan '''
+    return render_template('admin/bendungan/teknis.html')

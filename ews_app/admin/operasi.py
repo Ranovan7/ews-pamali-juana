@@ -15,8 +15,8 @@ from ews_app.admin import bp
 @roles_filter(roles=['admin', 'pejabat'])
 def operasi():
     ''' Index alert '''
-    return render_template('admin/operasi/index.html',
-                            title='Operasi')
+    print("Admin Operasi")
+    return render_template('admin/operasi/index.html')
 
 
 @bp.route('/bendungan/<bendungan_id>/operasi')
@@ -26,7 +26,6 @@ def operasi():
 def operasi_bendungan(bendungan_id):
     ''' Index alert '''
     return render_template('admin/operasi/bendungan.html',
-                            title='Operasi',
                             bendungan_id=bendungan_id)
 
 
@@ -35,4 +34,4 @@ def operasi_bendungan(bendungan_id):
 @roles_filter(roles=['admin', 'pejabat'])
 def operasi_chart(bendungan_id):
     ''' Index alert '''
-    return render_template('admin/operasi/index.html', title='Operasi')
+    return render_template('admin/operasi/index.html')

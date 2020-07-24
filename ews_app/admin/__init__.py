@@ -13,8 +13,9 @@ bp = Blueprint('admin', __name__)
 def dashboard():
     ''' Dashboard EWS '''
     print("dashboard")
-    return render_template('admin/dashboard.html', title='Dashboard')
+    return render_template('admin/dashboard.html')
 
 
 import ews_app.admin.alert
+import ews_app.admin.bendungan
 import ews_app.admin.operasi

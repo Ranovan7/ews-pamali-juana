@@ -8,7 +8,7 @@
 
         <title>
             {% if title %}
-                {{title}} | Admin EWS Pamali Juana
+                {{ title.title() }} | Admin EWS Pamali Juana
             {% else %}
                 Admin EWS Pamali Juana
             {% endif %}
@@ -27,7 +27,7 @@
         {% block css %}{% endblock %}
     </head>
 
-    <body class="hold-transition sidebar-mini"">
+    <body class="hold-transition sidebar-mini layout-fixed">
 
         <!-- Page Wrapper -->
         <div id="wrapper">
@@ -35,7 +35,7 @@
             {% include 'master/navbar_admin.html' %}
 
             <!-- Main content -->
-            <div class="content-wrapper">
+            <div class="content-wrapper" id="master">
               <section class="content">
                 <div class="container-fluid">
                     <!-- NoScript section -->
@@ -128,6 +128,13 @@
         <!-- AdminLTE App -->
         <script src="{{ url_for('static', filename='js/adminlte.js') }}"></script>
         <script>
+        $("#master").click(function() {
+            if ($(document.body).hasClass("sidebar-open")) {
+                $(document.body).removeClass("sidebar-open");
+                $(document.body).addClass("sidebar-closed");
+                $(document.body).addClass("sidebar-collapse");
+            }
+        });
         function customConfirm(message, yesCallback) {
             let confirmBox = $("#confirm");
             confirmBox.find(".message").text(message);
