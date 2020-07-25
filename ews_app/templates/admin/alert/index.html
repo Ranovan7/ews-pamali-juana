@@ -9,8 +9,142 @@
 {% endblock %}
 
 {% block content %}
-<div class="">
-    <h1>Admin Alert Index</h1>
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">Status Bendungan</h1>
+      </div><!-- /.col -->
+      <!-- <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard v3</li>
+        </ol>
+      </div>-->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">
+        <b>Bendungan Logung</b>
+        <span class="badge badge-warning ml-1">AWAS</span>
+    </h5>
+
+    <!-- <div class="card-tools">
+      <span class="badge badge-warning">Siaga</span>
+    </div> -->
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+      <h5 class="pb-2">Kondisi</h5>
+    <div class="row" id="info_bendungan">
+        <div class="col-md-4">
+            <div class="info-box">
+              <span class="info-box-icon bg-light elevation-1">
+                  <i class="fas fa-cloud-rain"></i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Curah Hujan</span>
+                <span class="info-box-number">
+                  10 <span>mm</span>
+                </span>
+                <span class="info-box-text"><i>Hari ini</i></span>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-box">
+              <span class="info-box-icon bg-light elevation-1">
+                  <i class="fas fa-water"></i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Tinggi Muka Air</span>
+                <span class="info-box-number">
+                  100 <span>m</span>
+                </span>
+                <span class="info-box-text"><i>Hari ini</i></span>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-box">
+              <span class="info-box-icon bg-light elevation-1">
+                  <i class="fab fa-vuejs"></i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">VNotch</span>
+                <span class="info-box-number">
+                  2.3 <span>L/detik</span>
+                </span>
+                <span class="info-box-text"><i>Hari ini</i></span>
+              </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h5 class="pb-2">Lokasi Peringatan</h5>
+    <div class="row">
+        <div class="col">
+            <div class="card card-outline card-warning">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Desa 1
+                        <span class="badge badge-warning">Alarm Bunyi</span>
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    Lokasi : Kantor Desa 1, Kecamatan, Kabupaten
+                </div>
+
+                <div class="card-footer">
+                    <a href="#" class="btn btn-sm btn-primary disabled">Bunyikan Alarm</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-outline card-secondary">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Desa 2
+                        <span class="badge badge-secondary">Alarm Diam</span>
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    Lokasi : Kantor Desa 2, Kecamatan, Kabupaten
+                </div>
+
+                <div class="card-footer">
+                    <a href="#" class="btn btn-sm btn-primary">Bunyikan Alarm</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-outline card-warning">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Desa 3
+                        <span class="badge badge-dark">Alarm Rusak</span>
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    Lokasi : Kantor Desa 3, Kecamatan, Kabupaten
+                </div>
+
+                <div class="card-footer">
+                    <a href="#" class="btn btn-sm btn-primary disabled">Bunyikan Alarm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="card-footer">
+
+  </div>
 </div>
 {% endblock %}
 

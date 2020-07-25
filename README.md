@@ -28,6 +28,12 @@ Create the tables and run the migrations:
 $ flask create-db
 ```
 
+### Create admin user
+
+```sh
+$ flask create-admin
+```
+
 ### Run the Application
 
 ```sh

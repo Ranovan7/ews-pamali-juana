@@ -34,4 +34,4 @@ def operasi_bendungan(bendungan_id):
 @roles_filter(roles=['admin', 'pejabat'])
 def operasi_chart(bendungan_id):
     ''' Index alert '''
-    return render_template('admin/operasi/index.html')
+    return render_template('admin/operasi/chart.html')

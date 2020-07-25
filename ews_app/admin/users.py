@@ -15,7 +15,7 @@ from ews_app.admin import bp
 @roles_filter(roles=['admin'])
 def users():
     ''' Index Bendungan '''
-    return render_template('admin/bendungan/index.html')
+    return render_template('admin/users/index.html')
 
 
 @bp.route('/users/add', methods=['POST'])

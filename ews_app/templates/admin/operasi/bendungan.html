@@ -10,13 +10,82 @@
 {% endblock %}
 
 {% block content %}
-<div class="">
-    <h1>Admin Operasi Bendungan {{ bendungan_id }}</h1>
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">
+            Data Periodik Bendungan Logung
+            <a href="{{ url_for('admin.operasi_chart', bendungan_id=1) }}" class="btn btn-sm btn-primary ml-1">
+                <i class="fas fa-chart-line"></i>
+            </a>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header border-transparent">
+      <div class="row text-center">
+          <div class="col-1">
+              <a href="#" class="btn btn-sm btn-outline-primary">
+                  <i class="fas fa-arrow-left"></i>
+              </a>
+          </div>
+          <div class="col-10">
+              <h5>Juli 2020</h5>
+          </div>
+          <div class="col-1">
+              <a href="#" class="btn btn-sm btn-outline-primary">
+                  <i class="fas fa-arrow-right"></i>
+              </a>
+          </div>
+      </div>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table m-0">
+        <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th class="text-center">Curah Hujan</th>
+              <th class="text-center">TMA Pagi</th>
+              <th class="text-center">TMA Siang</th>
+              <th class="text-center">TMA Sore</th>
+              <th class="text-center">VNotch</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(28) %}
+            <tr>
+              <td id="tgl">2020-07-{{ 28 - i }}</td>
+              <td align="right">12</td>
+              <td align="right">123</td>
+              <td align="right">123</td>
+              <td align="right">123</td>
+              <td align="right">2.4</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer clearfix">
+
+  </div>
 </div>
 {% endblock %}
 
 {% block js %}
+<script src="{{ url_for('static', filename='js/moment.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/id.js') }}"></script>
 <script>
-
+let tgls = document.querySelectorAll("#tgl");
+tgls.forEach(function(el){
+    console.log(el.value);
+    el.innerText = moment(el.innerText).format('dddd, LL');
+});
 </script>
 {% endblock %}

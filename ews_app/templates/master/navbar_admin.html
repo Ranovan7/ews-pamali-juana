@@ -20,7 +20,7 @@
           {{ current_user.username }}
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
+          <a href="{{ url_for('logout') }}" class="dropdown-item">
             <i class="fas fa-sign-out-alt mr-2"></i>
             Logout
           </a>
@@ -60,7 +60,7 @@
                  <i class="nav-icon fas fa-bell"></i>
                  <p>
                    Peringatan
-                   <span class="badge badge-warning right">6</span>
+                   <span class="badge badge-warning right">1</span>
                  </p>
                </a>
              </li>
@@ -106,7 +106,7 @@
             </li>
             {% endif %}
 
-            {% if current_user.role_name in ['admin'] %}
+            <!-- {% if current_user.role_name in ['admin'] %}
             <li class="nav-item">
               <a href="{{ url_for('admin.users') }}" class="nav-link {% if title == 'users' %}active{% endif %}">
                 <i class="nav-icon fas fa-user"></i>
@@ -115,7 +115,7 @@
                 </p>
               </a>
             </li>
-            {% endif %}
+            {% endif %} -->
 
             {% if current_user.role_name in ['petugas'] %}
             <li class="nav-item menu-open">
@@ -140,7 +140,7 @@
                 <i class="nav-icon fas fa-bell"></i>
                 <p>
                   Peringatan
-                  <span class="badge badge-warning right">6</span>
+                  <span class="badge badge-warning right">1</span>
                 </p>
               </a>
             </li>
