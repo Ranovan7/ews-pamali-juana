@@ -22,7 +22,7 @@ $ psql
 # \q
 ```
 
-Create the tables and run the migrations:
+### Create the tables
 
 ```sh
 $ flask create-db
