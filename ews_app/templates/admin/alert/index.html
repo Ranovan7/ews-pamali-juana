@@ -30,63 +30,69 @@
     <h5 class="card-title">
         <b>Bendungan Logung</b>
         <span class="badge badge-warning ml-1">AWAS</span>
+        <span class="badge badge-warning">
+            <i class="far fa-bell"></i>
+            1
+        </span>
     </h5>
 
-    <!-- <div class="card-tools">
-      <span class="badge badge-warning">Siaga</span>
-    </div> -->
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+        <i class="fas fa-minus"></i>
+      </button>
+    </div>
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-      <h5 class="pb-2">Kondisi</h5>
-    <div class="row" id="info_bendungan">
-        <div class="col-md-4">
-            <div class="info-box">
-              <span class="info-box-icon bg-light elevation-1">
-                  <i class="fas fa-cloud-rain"></i>
-              </span>
-              <div class="info-box-content">
-                <span class="info-box-text">Curah Hujan</span>
-                <span class="info-box-number">
-                  10 <span>mm</span>
-                </span>
-                <span class="info-box-text"><i>Hari ini</i></span>
-              </div>
-            </div>
+      <div class="row">
+        <div class="col-sm-3 col-6">
+          <div class="description-block border-right">
+            <span class="description-percentage text-warning">
+                <b>123 m</b>
+            </span>
+            <br>
+            <span class="description-text">TMA Sekarang</span>
+          </div>
+          <!-- /.description-block -->
         </div>
-        <div class="col-md-4">
-            <div class="info-box">
-              <span class="info-box-icon bg-light elevation-1">
-                  <i class="fas fa-water"></i>
+        <!-- /.col -->
+        <div class="col-sm-3 col-6">
+          <div class="description-block border-right">
+              <span class="description-percentage text-warning">
+                  <b>120 m</b>
               </span>
-              <div class="info-box-content">
-                <span class="info-box-text">Tinggi Muka Air</span>
-                <span class="info-box-number">
-                  100 <span>m</span>
-                </span>
-                <span class="info-box-text"><i>Hari ini</i></span>
-              </div>
-            </div>
+              <br>
+            <span class="description-text">ELEVASI AWAS</span>
+          </div>
+          <!-- /.description-block -->
         </div>
-        <div class="col-md-4">
-            <div class="info-box">
-              <span class="info-box-icon bg-light elevation-1">
-                  <i class="fab fa-vuejs"></i>
+        <!-- /.col -->
+        <div class="col-sm-3 col-6">
+          <div class="description-block border-right">
+              <span class="description-percentage text-info">
+                  <b>110 m</b>
               </span>
-              <div class="info-box-content">
-                <span class="info-box-text">VNotch</span>
-                <span class="info-box-number">
-                  2.3 <span>L/detik</span>
-                </span>
-                <span class="info-box-text"><i>Hari ini</i></span>
-              </div>
-            </div>
+              <br>
+            <span class="description-text">ELEVASI SIAGA</span>
+          </div>
+          <!-- /.description-block -->
         </div>
-    </div>
+        <!-- /.col -->
+        <div class="col-sm-3 col-6">
+          <div class="description-block">
+              <span class="description-percentage text-success">
+                  <b>100 m</b>
+              </span>
+              <br>
+            <span class="description-text">ELEVASI WASPADA</span>
+          </div>
+          <!-- /.description-block -->
+        </div>
+      </div>
     <hr>
     <h5 class="pb-2">Lokasi Peringatan</h5>
     <div class="row">
-        <div class="col">
+        <div class="col-sm-4">
             <div class="card card-outline card-warning">
                 <div class="card-header">
                     <h3 class="card-title">
@@ -100,11 +106,17 @@
                 </div>
 
                 <div class="card-footer">
-                    <a href="#" class="btn btn-sm btn-primary disabled">Bunyikan Alarm</a>
+                    <a href="#" class="btn btn-sm btn-primary disabled">
+                        <i class="fas fa-sync-alt fa-spin"></i>
+                        Alarm Bunyi
+                    </a>
+                    <a href="#" class="btn btn-sm btn-danger">
+                        Stop
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-sm-4">
             <div class="card card-outline card-secondary">
                 <div class="card-header">
                     <h3 class="card-title">
@@ -122,8 +134,8 @@
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card card-outline card-warning">
+        <div class="col-sm-4">
+            <div class="card card-outline card-secondary">
                 <div class="card-header">
                     <h3 class="card-title">
                         Desa 3

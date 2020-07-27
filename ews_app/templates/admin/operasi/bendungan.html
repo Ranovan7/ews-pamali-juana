@@ -25,6 +25,143 @@
   </div>
 </div>
 
+<div class="row mb-3">
+    <div class="col-4 text-center">
+        <a href="#" class="btn btn-outline-primary" data-toggle="modal" data-target="#formPagi">
+            <i class="fas fa-edit"></i>
+            Data Pagi
+        </a>
+    </div>
+    <div class="col-4 text-center">
+        <a href="#" class="btn btn-outline-primary" data-toggle="modal" data-target="#formSiang">
+            <i class="fas fa-edit"></i>
+            Data Siang
+        </a>
+    </div>
+    <div class="col-4 text-center">
+        <a href="#" class="btn btn-outline-primary" data-toggle="modal" data-target="#formSore">
+            <i class="fas fa-edit"></i>
+            Data Sore
+        </a>
+    </div>
+
+    <!-- Modal Form Pagi -->
+    <div class="modal fade" id="formPagi" tabindex="-1" role="dialog" aria-labelledby="formPagiLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="formPagiLabel">Input Data Pagi</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="form-group row">
+                <label for="inputTmaPagi" class="col-sm-4 col-form-label">TMA Pagi</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input type="number" step="0.01" class="form-control" id="inputTmaPagi" placeholder="123">
+                        <div class="input-group-append">
+                          <span class="input-group-text">m</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputCh" class="col-sm-4 col-form-label">Curah Hujan</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input type="number" step="0.01" class="form-control" id="inputCh" placeholder="12.4">
+                        <div class="input-group-append">
+                          <span class="input-group-text">mm</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputVn" class="col-sm-4 col-form-label">VNotch</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input type="number" step="0.01" class="form-control" id="inputVn" placeholder="1.23">
+                        <div class="input-group-append">
+                          <span class="input-group-text">L/det</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-primary">Kirim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Form Siang -->
+    <div class="modal fade" id="formSiang" tabindex="-1" role="dialog" aria-labelledby="formPagiLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="formPagiLabel">Input Data Siang</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="form-group row">
+                <label for="inputTmaPagi" class="col-sm-4 col-form-label">TMA Siang</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input type="number" step="0.01" class="form-control" id="inputTmaPagi" placeholder="123">
+                        <div class="input-group-append">
+                          <span class="input-group-text">m</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-primary">Kirim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Form Sore -->
+    <div class="modal fade" id="formSore" tabindex="-1" role="dialog" aria-labelledby="formPagiLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="formPagiLabel">Input Data Sore</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="form-group row">
+                <label for="inputTmaPagi" class="col-sm-4 col-form-label">TMA Sore</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input type="number" step="0.01" class="form-control" id="inputTmaPagi" placeholder="123">
+                        <div class="input-group-append">
+                          <span class="input-group-text">m</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-primary">Kirim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
 <div class="card">
   <div class="card-header border-transparent">
       <div class="row text-center">
